@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>WebTorrent Component Demo</title>
+		<style>
+			body {
+				margin: 0 0 0 0;
+				padding: 10px 10px 10px 10px;
+			}
+			
+			web-torrent video {
+				width: 90vw
+			}
+		</style>
+	</head>
+
+	<body class="body">
+		<input type="text" placeholder="输入磁力链接" /><input type="button" value="GO" />
+		<script src="https://cdn.jsdelivr.net/npm/webtorrent-element@latest/dist/webtorrent-element.min.js"></script>
+		<web-torrent id="webTorrent"></web-torrent>
+		<script>
+			var webTorrent = document.getElementById('webTorrent'),
+				inputEl = document.querySelector('input[type=text]');
+			document.querySelector('input[type=button]').addEventListener('click', function() {
+				inputEl.value && inputEl.value !== null && inputEl.value !== '' && (webTorrent.src = inputEl.value);
+			}, false);
+		</script>
+	</body>
+
+</html>
